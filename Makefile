@@ -1,11 +1,21 @@
+#
+# Basic Makefile to compile sat solver
+#
+
 CPP = g++
-CPPFLAGS= -Wall -Wextra
+CPPFLAGS= -O2 -std=c++11
 
-dpll: dpll.o
-	$(CPP) $(CPPFLAGS) -o dpll dpll.o
+all: trace fast
 
-dpll.o: dpll.cpp dpll.hpp
+trace: dpll-trace.o
+	$(CPP) $(CPPFLAGS) -o dpll-trace dpll-trace.o
+
+fast: dpll-fast.o
+	$(CPP) $(CPPFLAGS) -o dpll-fast dpll-fast.o
+
+dpll-trace.o: dpll-trace.cpp dpll.hpp
+dpll-fast.o: dpll-fast.cpp dpll.hpp
 
 clean:
-	rm -f *~ *.o dpll
+	rm -f *~ *.o dpll-trace dpll-fast
 
