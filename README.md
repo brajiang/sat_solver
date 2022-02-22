@@ -1,4 +1,4 @@
-##SAT SOLVER
+## SAT SOLVER
 
 A SAT solver for CNF formulas using the classical Davis-Putnam-Logemann-Loveland algorithm.
 The boolean satisfiability problem is the first shown to be NP-complete, therefore the best known algorithms are still exponential in the worst case, as they are all ultimately brute force.
@@ -13,7 +13,7 @@ My code consists of two alternate implementations: sat-trace, which allows for e
 Both employ a greedy heuristic that chooses the variable which occurs the most frequently in the formula.
 
 
-###Compilation and Execution
+### Compilation and Execution
 gcc is required. To compile and run, enter the following commands:
 
 ```
